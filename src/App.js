@@ -4,7 +4,7 @@ import data from "./data.json";
 function App() {
   const [query, setQuery] = useState('');
   const [searchParam] = useState(["title", "text"]);
-
+  // search by title & text
   const search = (items) => {
     return items.filter(item => {
       return searchParam.some(newItem => {
@@ -17,6 +17,14 @@ function App() {
       });
     });
   }
+  // sort by title
+  data.sort((a,b) => {
+    return a.title > b.title;
+  });
+  // add index to each item
+  data.map((item, index) => {
+    item["id"] = index + 1;
+  })
 
   return (
     <div className="App">
