@@ -22,9 +22,9 @@ function App() {
     return a.title > b.title;
   });
   // add index to each item
-  data.map((item, index) => {
-    item["id"] = index + 1;
-  })
+  // data.map((item, index) => {
+  //   item["id"] = index + 1;
+  // })
 
   return (
     <div className="App">
@@ -45,8 +45,8 @@ function App() {
       </header>
       <main className="main">
         <ul className="main_items">
-          {search(data).map((item) => (
-            <li key={item.id} className="main_item">
+          {search(data).map((item, id) => (
+            <li key={id} className="main_item" id={`item-id-${id}`}>
               <h2 className="main_title">{item.title}</h2>
               <p className="main_text">{item.text}</p>
               <div className="divider"></div>
