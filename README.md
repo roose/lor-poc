@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Path of Champions Nodes, Legends of Runeterra PVE Mode
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Todo
+- [ ] Add mobile view
+- [ ] Add clear button to the search input
+- [ ] Add all nodes
+- [ ] Add translate to the english(?)
 
 ## Available Scripts
 
