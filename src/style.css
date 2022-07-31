@@ -49,6 +49,7 @@ code {
 }
 
 .header_data {
+  padding: 0 20px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -65,6 +66,12 @@ code {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 768px) {
+  .header_title {
+    font-size: 3em;
+  }
+}
+
 .header_input {
   font-size: 20px;
   padding: 14px 20px;
@@ -73,7 +80,14 @@ code {
   font-family: var(--opensans);
 }
 
+@media screen and (max-width: 480px) {
+  .header_input {
+    width: 100%;
+  }
+}
+
 .main {
+  padding: 0 20px;
   position: relative;
   background: repeat url('/public/background-dark-grey-noise.jpg') 0 0;
 }
@@ -174,8 +188,20 @@ footer ul {
   justify-content: center;
 }
 
+@media screen and (max-width: 480px) {
+  footer ul {
+    flex-direction: column;
+  }
+}
+
 footer li {
   margin: 0 20px;
+}
+
+@media screen and (max-width: 480px) {
+  footer li {
+    margin-bottom: 10px;
+  }
 }
 
 footer a {
