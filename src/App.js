@@ -33,21 +33,29 @@ function App() {
     });
   }
 
+  // clear search input
+  const handleClear = (e) => {
+    setQuery('');
+  }
+
   return (
     <div className="App">
       <header className="header">
         <img src="./game-updates-hero.jpg" alt="" />
         <div className="header_data">
           <h1 className="header_title">Узлы Пути Чемпионов 2.0</h1>
-          <input
-            className="header_input"
-            type="search"
-            name=""
-            id=""
-            value={query}
-            placeholder="Поиск"
-            onChange={e => setQuery(e.target.value)}
-          />
+          <div className="header_wrap">
+            <button className="header_clear" onClick={handleClear}>✖</button>
+            <input
+              className="header_input"
+              type="search"
+              name=""
+              id=""
+              value={query}
+              placeholder="Поиск"
+              onChange={e => setQuery(e.target.value)}
+            />
+          </div>
         </div>
       </header>
       <main className="main">

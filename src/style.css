@@ -72,15 +72,39 @@ code {
   }
 }
 
+.header_wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.header_clear {
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  font-size: 2em;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  color: #222;
+}
+
 .header_input {
   font-size: 20px;
-  padding: 14px 20px;
+  padding: 14px 44px 14px 20px;
   width: 400px;
   outline: none;
   font-family: var(--opensans);
 }
 
 @media screen and (max-width: 480px) {
+  .header_wrap {
+    width: 100%;
+  }
   .header_input {
     width: 100%;
   }
