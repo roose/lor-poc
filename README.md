@@ -1,6 +1,9 @@
 # Path of Champions Nodes, Legends of Runeterra PVE Mode
 
+Data repo is [here](https://github.com/roose/lor-poc-data)
+
 ## Todo
+- [x] Load data from data repo
 - [ ] Add mobile view
 - [ ] Add clear button to the search input
 - [ ] Add all nodes

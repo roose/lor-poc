@@ -156,3 +156,47 @@ code {
  transform-origin:right bottom;
  transform:rotate(-20deg)
 }
+
+
+footer {
+  padding: 24px;
+  font-size: 13px;
+  background: #111;
+  color: #f9f9f9;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer li {
+  margin: 0 20px;
+}
+
+footer a {
+  color: #737373;
+  display: flex;
+  align-items: center;
+  line-height: 18px;
+  transition: all .3s;
+}
+
+footer a:hover {
+  color: #f9f9f9;
+}
+
+footer a:hover svg {
+  fill: #f9f9f9;
+}
+
+footer svg {
+  width: 16px;
+  height: 16px;
+  fill: #737373;
+  margin-left: 10px;
+}
