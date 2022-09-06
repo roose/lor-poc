@@ -6,13 +6,16 @@
 * {
   box-sizing: border-box;
 }
-
+html {
+  height: 100%;
+}
 html,
 body {
   font-size: 10px;
 }
 
 body {
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -29,6 +32,7 @@ code {
 .App {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .header {
@@ -111,12 +115,16 @@ code {
 }
 
 .main {
-  padding: 0 20px;
+  flex: 1;
+  padding: 0 20px 20px 20px;
   position: relative;
-  background: repeat url('/public/background-dark-grey-noise.jpg') 0 0;
+  background:
+    url('/public/background-home.jpg') no-repeat 0 -10px/100% auto,
+    url('/public/background-dark-grey-noise.jpg') repeat 0 0;
+  /* background-size: cover; */
 }
 
-.main:before {
+/* .main:before {
   content: '';
   position: absolute;
   top: 0;
@@ -127,7 +135,7 @@ code {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
-}
+} */
 
 .main_items {
   position: relative;
@@ -193,6 +201,65 @@ code {
  right:0;
  transform-origin:right bottom;
  transform:rotate(-20deg)
+}
+
+.refs {
+  font-size: 1.5rem;
+}
+.refs_title {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-weight: normal;
+}
+.refs_items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.refs_btn {
+  font-size: 1.5rem;
+  color: cadetblue;
+  text-decoration-style: dotted;
+  text-decoration-line: underline;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all .3s;
+}
+.refs_btn:hover {
+  color: #62c7ca;
+}
+.refs_item:after {
+  content: ',';
+  margin-right: 10px;
+}
+.refs_item:last-child:after {
+  content: '';
+  margin: 0;
+}
+.refs_img {
+  position: absolute;
+  /* top: 20px; */
+  bottom: 20px;
+  left: 0;
+  z-index: 10;
+  width: 300px;
+  height: auto;
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .refs_img {
+    width: 100%;
+    bottom: 60px;
+  }
+}
+.refs_btn:hover + .refs_img {
+  display: block;
 }
 
 

@@ -6,8 +6,8 @@ Data repo is [here](https://github.com/roose/lor-poc-data)
 - [x] Load data from data repo
 - [x] Add mobile view
 - [x] Add clear button to the search input
+- [x] Add card preview(?)
 - [ ] Add all nodes
-- [ ] Add card preview(?)
 - [ ] Add translate to the english(?)
 
 ## Available Scripts
