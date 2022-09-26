@@ -16,7 +16,7 @@ const Header = ({ query, setQuery }) => {
             value={query}
             placeholder="Поиск"
             onChange={e => setQuery(e.target.value)}
-            autofocus=""
+            autoFocus=""
           />
         </div>
       </div>

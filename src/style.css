@@ -163,6 +163,19 @@ code {
   letter-spacing: .02em;
 }
 
+.main_title:hover .main_icon {
+  visibility: visible;
+}
+
+.main_anchor {
+  padding-left: 4px;
+}
+
+.main_icon {
+  fill: #c49250;
+  visibility: hidden;
+}
+
 .main_text {
   color: #d5d2c9;
   font-size: 1.8rem;

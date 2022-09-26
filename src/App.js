@@ -19,6 +19,12 @@ function App() {
             return a.title > b.title;
           });
           setItems(result);
+          setTimeout(() => {
+            const { hash } = window.location;
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) element.scrollIntoView();
+          }, 100);
         }
       )
   }, [])
