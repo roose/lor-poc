@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import slugify from "slugify";
 
 const base_url = 'https://dd.b.pvp.net/latest';
@@ -7,6 +7,13 @@ const lab_url = 'https://raw.githubusercontent.com/roose/lor-poc-data/main/data/
 const Node = ({title, text, cards}) => {
 
   const slug = slugify(title, {lower: true});
+
+  useEffect(() => {
+    const { hash } = window.location;
+    const id = hash.replace('#', '');
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView();
+  }, [])
 
   return (
     <li className="main_item">
