@@ -7,27 +7,40 @@ import Footer from "./components/Footer";
 function App() {
   const [query, setQuery] = useState('');
   const [items, setItems] = useState([]);
+  const [lang, setLang] = useState();
   const [searchParam] = useState(["title", "text"]);
+
+  const extractHashLang = () => {
+    const { hash } = window.location;
+    let hashLang = hash.replace('#', '').slice(0, 2);
+    if (hashLang && (hashLang === 'en' || hashLang === 'ru')) {
+      return hashLang;
+    }
+    return '';
+  }
+
+
+  useEffect(() => {
+    // console.log(extractHashLang());
+    let userLang = extractHashLang() || localStorage.getItem('lang') || navigator.language || navigator.userLanguage;
+    setLang(userLang.slice(0, 2));
+  }, []);
 
   // get data
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/roose/lor-poc-data/main/data.json")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          result.sort((a, b) => {
-            return a.title > b.title;
-          });
-          setItems(result);
-          // setTimeout(() => {
-          //   const { hash } = window.location;
-          //   const id = hash.replace('#', '');
-          //   const element = document.getElementById(id);
-          //   if (element) element.scrollIntoView();
-          // }, 100);
-        }
-      )
-  }, [])
+    if (lang !== undefined) {
+      fetch(`https://raw.githubusercontent.com/roose/lor-poc-data/main/data-${lang}.json`)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            result.sort((a, b) => {
+              return a.title > b.title;
+            });
+            setItems(result);
+          }
+        );
+    }
+  }, [lang]);
 
   // search by title & text
   const search = (items) => {
@@ -45,9 +58,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header query={query} setQuery={setQuery} />
-      <Main search={search} items={items} />
-      <Footer />
+      <Header query={query} setQuery={setQuery} lang={lang} setLang={setLang} />
+      <Main search={search} items={items} lang={lang} />
+      <Footer lang={lang} />
     </div>
   );
 }

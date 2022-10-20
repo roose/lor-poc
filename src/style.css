@@ -114,6 +114,67 @@ code {
   }
 }
 
+.header_lang {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.header_lang_link {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header_lang_link svg {
+  width: 24px;
+  height: 24px;
+}
+
+.header_lang_drop {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  background: #fff;
+  color: #999;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  line-height: 40px;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,.2);
+}
+.header_lang_drop:before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 14px;
+  border: 10px solid transparent;
+  border-bottom-color: #f9f9f9;
+}
+.header_lang_drop li {
+  cursor: pointer;
+  padding-left: 20px;
+  transition: color .2s;
+}
+
+.header_lang_drop li:hover {
+  color: #333;
+}
+.header_lang_link-active {
+  color: #c4202b;
+}
+
 .main {
   flex: 1;
   padding: 0 20px 20px 20px;
