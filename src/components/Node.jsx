@@ -1,15 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import slugify from "slugify";
 
 const Node = ({title, text, cards, lang, apiLang, base_url, lab_url}) => {
   const slug = slugify(title, {lower: true});
-
-  useEffect(() => {
-    const { hash } = window.location;
-    const id = hash.replace('#', '');
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView();
-  }, [])
 
   return (
     <li className="main_item">
