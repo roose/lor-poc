@@ -9,12 +9,21 @@ const Header = ({ query, setQuery, lang, setLang }) => {
     setLangsVisible(prev => !prev);
   }
 
-  const handleLangChange = (e) => {
-    if (e.target.className !== 'header_lang_link-active') {
-      setLang(e.target.dataset.lang);
-      localStorage.setItem('lang', e.target.dataset.lang);
+  // const handleLangChange = (e) => {
+  //   if (e.target.className !== 'header_lang_link-active') {
+  //     setLang(e.target.dataset.lang);
+  //     localStorage.setItem('lang', e.target.dataset.lang);
+  //     setLangsVisible(false);
+  //     window.history.pushState("", "", window.location.pathname);
+  //   }
+  // }
+
+  const handleLangChange = (newLang) => {
+    if (newLang !== lang) {
+      setLang(newLang);
+      localStorage.setItem('lang', newLang);
       setLangsVisible(false);
-      window.history.pushState("", "", window.location.pathname);
+      // window.history.pushState("", "", window.location.pathname);
     }
   }
 
@@ -26,9 +35,9 @@ const Header = ({ query, setQuery, lang, setLang }) => {
         </span>
         {
           langsVisible &&
-            <ul className="header_lang_drop" onClick={handleLangChange}>
-              <li data-lang='en' className={lang === 'en' ? 'header_lang_link-active' : undefined}>English</li>
-              <li data-lang='ru' className={lang === 'ru' ? 'header_lang_link-active' : undefined}>Русский</li>
+            <ul className="header_lang_drop">
+              <li data-lang='en' className={lang === 'en' ? 'header_lang_link-active' : undefined} onClick={e => handleLangChange("en")} >English</li>
+              <li data-lang='ru' className={lang === 'ru' ? 'header_lang_link-active' : undefined} onClick={e => handleLangChange("ru")} >Русский</li>
             </ul>
         }
       </div>
