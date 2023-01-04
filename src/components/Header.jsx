@@ -34,7 +34,7 @@ const Header = ({ query, setQuery, lang, setLang }) => {
       </div>
       <img src="./game-updates-hero.jpg" alt="" />
       <div className="header_data">
-        <h1 className="header_title">Узлы Пути Чемпионов 2.0</h1>
+        <h1 className="header_title">{ lang === 'en' ? 'The Path of Champions 2.0 Nodes' : 'Узлы Пути Чемпионов 2.0' }</h1>
         <div className="header_wrap">
           <button className="header_clear" onClick={e => setQuery('')}>✖</button>
           <input

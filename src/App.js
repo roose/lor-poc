@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -67,6 +68,9 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>{ lang === 'en' ? 'The Path of Champions 2.0 Nodes' : 'Узлы Пути Чемпионов 2.0' }</title>
+      </Helmet>
       <Header query={query} setQuery={setQuery} lang={lang} setLang={setLang} />
       <Main items={filteredItems} lang={lang} />
       <Footer lang={lang} />
